@@ -1,0 +1,88 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+  max-width: 1280px;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.btn {
+  height: 1.5em;
+  margin: 0 1em;
+  padding: 0.5em 1.5em;
+  border-radius: 2em;
+  color: white;
+  background: linear-gradient(to bottom right, #99a9ee, #01038f);
+  user-select: none;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+}
+
+.btn:hover {
+  box-shadow: 0 0 5px 3px #99a9ee;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.modal-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -10;
+  transition: background-color 0.5s;
+}
+
+.modal-body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  transform: translate(-50%, -50%);
+  max-width: 500px;
+  max-height: 30em;
+  color: white;
+  border-radius: 5px;
+  background: linear-gradient(to bottom right, #99a9ee, #01038f);
+  opacity: 0;
+  z-index: -20;
+  transition: transform 0.4s, opacity 0.4s;
+}
+
+.modal-content {
+  margin: 2em;
+}
+
+hr {
+  margin-bottom: 1.5em;
+  color: white;
+}
+
+.modal-footer {
+  font-size: 0.9em;
+  text-align: center;
+}
+
+/* modal open の時のスタイル */
+#modal1:checked ~ .bg1,
+#modal2:checked ~ .bg2 {
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+#modal1:checked ~ .modal1,
+#modal2:checked ~ .modal2 {
+  opacity: 1;
+  transform: translate(-50%, -70%);
+  z-index: 20;
+}
